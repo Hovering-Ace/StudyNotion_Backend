@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(cookieParser()); // ✅ fixed
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://study-notion-frontend-indol-mu.vercel.app",
     credentials: true,
   })
 );
