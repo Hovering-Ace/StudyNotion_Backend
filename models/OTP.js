@@ -34,7 +34,7 @@ async function sendVerificationEmail(email,otp){
 
 OTPSchema.pre("save",async function(next){
     await sendVerificationEmail(this.email,this.otp);
-    console.alert("otp saved success");
+    console.log("otp saved success");
     next();
 });
 
