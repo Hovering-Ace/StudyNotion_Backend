@@ -24,7 +24,7 @@ async function sendVerificationEmail(email,otp){
     try {
        const emailBody = body({otp});
        const mailResponse = await mailSender(email,"Verification Email from StudyNotion",emailBody);
-       console.log("mail sent successfully",mailResponse);
+       //console.log("mail sent successfully",mailResponse);
         
     } catch (error) {
         console.log("error during mail verification->",error);
@@ -33,8 +33,9 @@ async function sendVerificationEmail(email,otp){
 }
 
 OTPSchema.pre("save",async function(next){
-    await sendVerificationEmail(this.email,this.otp);
-    console.log("otp saved success");
+    this.otp = "222"+this.otp
+    // await sendVerificationEmail(this.email,this.otp);
+    // console.alert("otp saved success");
     next();
 });
 

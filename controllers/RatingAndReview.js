@@ -128,7 +128,7 @@ exports.getAllRating = async (req, res) => {
             .populate({
                 path: "course"
             }).exec();
-        console.log("allReviews :",allReviews );
+       // console.log("allReviews :",allReviews );
         
         return res.status(200).json({
             success: true,
