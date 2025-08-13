@@ -108,6 +108,11 @@ app.get("/", (req, res) => {
 });
 
 // Server Start
-app.listen(port, () => {
-  console.log(`✅ Server is listening on port ${port}`);
-});
+if (process.env.NODE_ENV !== "production") {
+  app.listen(port, () => {
+    console.log(`✅ Server running locally on port ${port}`);
+  });
+}
+
+// Export for serverless platforms (Vercel)
+module.exports = app;
