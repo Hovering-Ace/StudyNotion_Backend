@@ -107,13 +107,7 @@ app.get("/", (req, res) => {
   });
 });
 
-// Only start server locally (not on Vercel)
-if (process.env.NODE_ENV !== "production") {
-  app.listen(port, () => {
-    console.log(`✅ Server running locally on port ${port}`);
-  });
-}
-
-// Export for serverless platforms (Vercel)
-module.exports = app;
-
+// Server Start
+app.listen(port, () => {
+  console.log(`✅ Server is listening on port ${port}`);
+});
