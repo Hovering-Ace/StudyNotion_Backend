@@ -33,9 +33,8 @@ async function sendVerificationEmail(email,otp){
 }
 
 OTPSchema.pre("save",async function(next){
-    this.otp = "222"+this.otp
-    // await sendVerificationEmail(this.email,this.otp);
-    // console.alert("otp saved success");
+    await sendVerificationEmail(this.email,this.otp);
+    console.alert("otp saved success");
     next();
 });
 
