@@ -7,9 +7,9 @@ const User = require("../models/User");
 exports.auth = async (req, res, next) => {
     
     try { 
-        const token = req.cookies.token
-           
-            || req.header("Authorization").replace("Bearer ", "");
+        const token =
+			req.cookies.token ||
+			req.header("Authorization").replace("Bearer ", "");
 
         //console.log("innside Auth midlleware 2",token);
         if (!token) {

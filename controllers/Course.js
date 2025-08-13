@@ -1,4 +1,6 @@
+const Section = require("../models/Section");
 const Course = require("../models/Course");
+const SubSection = require("../models/SubSection");
 const Category = require("../models/Category");
 const User = require("../models/User");
 const { uploadToCloudinary } = require("../utils/imageUploader");
@@ -88,7 +90,7 @@ exports.createCourse = async (req, res) => {
         });
 
     } catch (error) {
-        console.error(error);
+        //console.error(error);
         return res.status(500).json({
             success: false,
             message: "Internal Server Error,failed to create course",
