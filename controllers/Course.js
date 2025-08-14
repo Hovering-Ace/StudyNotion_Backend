@@ -115,10 +115,7 @@ exports.editCourse = async (req, res) => {
     // Update thumbnail if present
     if (req.files?.thumbnailImage) {
       const thumbnail = req.files.thumbnailImage;
-      const thumbnailImage = await uploadImageToCloudinary(
-        thumbnail,
-        process.env.FOLDER_NAME
-      );
+      const thumbnailImage = await uploadToCloudinary(thumbnail, process.env.FOLDER_NAME);
       course.thumbnail = thumbnailImage.secure_url;
     }
 
